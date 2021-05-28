@@ -20,7 +20,8 @@ ALLOWED_HOSTS = [
     '192.168.1.113',
     '0.0.0.0',
     '90c73678328d.ngrok.io',
-    'https://90c73678328d.ngrok.io'
+    'https://90c73678328d.ngrok.io',
+    'still-citadel-99548.herokuapp.com'
 ]
 
 
