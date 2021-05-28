@@ -23,7 +23,8 @@ ALLOWED_HOSTS = [
     'https://90c73678328d.ngrok.io',
     'supermän.com',
     'supermaan.herokuapp.com',
-    'still-citadel-99548.herokuapp.com'
+    'still-citadel-99548.herokuapp.com',
+    'www.xn--supermn-bxa.com'
 ]
 
 
@@ -37,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_extensions',
+    'social_django',
     #'magiclink',
     'compressor',
     'compressor_toolkit',
@@ -54,6 +56,12 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.static',
     'django.core.context_processors.tz',
 )
+
+AUTHENTICATION_BACKENDS = {
+    'home.auth0backend.Auth0',
+    'django.contrib.auth.backends.ModelBackend'
+}
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -78,16 +86,14 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect'
             ],
         },
     },
 ]
 
 WSGI_APPLICATION = 'superman.wsgi.application'
-
-
-# Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
     'default': {
@@ -96,15 +102,19 @@ DATABASES = {
     }
 }
 
-''' ATTEMPT TO GET MAGICLINK RUNNING
-AUTHENTICATION_BACKENDS = (
-    'magiclink.backends.MagicLinkBackend',
-    'django.contrib.auth.backends.ModelBackend',
-)
-'''
+SOCIAL_AUTH_TRAILING_SLASH = False  # Remove trailing slash from routes
+SOCIAL_AUTH_AUTH0_DOMAIN = config('SOCIAL_AUTH_AUTH0_DOMAIN')
+SOCIAL_AUTH_AUTH0_KEY = config('SOCIAL_AUTH_AUTH0_KEY')
+SOCIAL_AUTH_AUTH0_SECRET = config('SOCIAL_AUTH_AUTH0_SECRET')
 
-# Password validation
-# https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
+SOCIAL_AUTH_AUTH0_SCOPE = [
+    'openid',
+    'profile',
+    'email'
+]
+
+LOGIN_URL = '/login/auth0'
+LOGIN_REDIRECT_URL = '/dashboard'
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -187,26 +197,4 @@ COMPRESS_OFFLINE = True
 
 $ npm install
 $ python manage.py compress
-'''
-
-''' ATTEMPT TO GET MAGICLINK RUNNING
-# Set Djangos login URL to the magiclink login page
-LOGIN_URL = 'magiclink:login'
-MAGICLINK_LOGIN_TEMPLATE_NAME = 'home/login.html'
-MAGICLINK_LOGIN_SENT_TEMPLATE_NAME = 'home/login_sent.html'
-MAGICLINK_LOGIN_FAILED_TEMPLATE_NAME = 'home/login_fail.html'
-
-# Optional:
-# If this setting is set to False a user account will be created the first
-# time a user requests a login link.
-MAGICLINK_REQUIRE_SIGNUP = True
-MAGICLINK_SIGNUP_TEMPLATE_NAME = 'home/signup.html'
-
-MAGICLINK_EMAIL_STYLES = {
-    'logo_url': 'https://example.com/logo.png',
-    'background-colour': '#ffffff',
-    'main-text-color': '#000000',
-    'button-background-color': '#0078be',
-    'button-text-color': '#ffffff',
-}
 '''

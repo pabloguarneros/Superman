@@ -1,0 +1,33 @@
+{% extends "home/starter.html" %}
+{% load static %}
+{% load compress %}
+{% load crispy_forms_tags %}
+
+{% block head %}
+    <title> Hanyang Gallery </title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  
+{% endblock %}
+
+{% block body %}
+    <div class="logged-in-box auth0-box logged-in">
+        <h1 id="logo"><img src="//cdn.auth0.com/samples/auth0_logo_final_blue_RGB.png" /></h1>
+        <img class="avatar" src="{{ auth0User.extra_data.picture }}"/>
+        <h2>Welcome {{ user.username }}</h2>
+        <pre>{{ userdata }}</pre>
+    </div>
+    <div class="logged-in-box auth0-box logged-in">
+        <h1 id="logo"><img src="//cdn.auth0.com/samples/auth0_logo_final_blue_RGB.png" /></h1>
+        <img class="avatar" src="{{ auth0User.extra_data.picture }}"/>
+        <h2>Welcome {{ user.username }}</h2>
+        <pre>{{ userdata }}</pre>
+        <a class="btn btn-primary btn-lg btn-logout btn-block" href="/logout">Logout</a>
+    </div>
+{% endblock %}
+
+
+{% block scripts %}
+    {% compress js %}
+        <script type="module" src="{% static 'home/js/js_test.js' %}"></script>
+    {% endcompress %}
+{% endblock %}
