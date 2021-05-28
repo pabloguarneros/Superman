@@ -1,21 +1,21 @@
 {% extends "home/starter.html" %}
 {% load static %}
-{% load compress %}
 {% load crispy_forms_tags %}
 
 {% block head %}
-    <title> Hanyang Gallery </title>
+    <title> Plz Login </title>
     <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
   
 {% endblock %}
 
 {% block body %}
-
+    <form action="{% url 'magiclink:login' %}{% if request.GET.next %}?next={{ request.GET.next }}{% endif %}" method="post">
+        {% csrf_token %}
+        {{ login_form }}
+        <button type='submit'>Send login email</button>
+    </form>
 {% endblock %}
 
 
 {% block scripts %}
-    {% compress js %}
-        <script type="module" src="{% static 'home/js/js_test.js' %}"></script>
-    {% endcompress %}
 {% endblock %}

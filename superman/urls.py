@@ -7,9 +7,10 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('karla/', admin.site.urls),
-    path('',include(('home.urls','home'),namespace='home'))    
-]
+    path('',include(('home.urls','home'),namespace='home'))
+    #path('auth/', include('magiclink.urls', namespace='magiclink')),
 
+]
 
 if settings.DEBUG: 
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
