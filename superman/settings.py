@@ -22,6 +22,7 @@ ALLOWED_HOSTS = [
     '90c73678328d.ngrok.io',
     'https://90c73678328d.ngrok.io',
     'supermän.com',
+    'supermaan.herokuapp.com',
     'still-citadel-99548.herokuapp.com'
 ]
 
