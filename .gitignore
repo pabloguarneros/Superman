@@ -4,6 +4,12 @@
 *.swo
 *.swp
 *.swn
+*.env
+
+# Environments #
+##################
+.env
+env/
 
 # Directories #
 ###############
@@ -11,7 +17,7 @@ node_modules
 
 # Specific files #
 ##################
-superman/settings.py
+#superman/settings.py
 
 # OS generated files #
 ######################
