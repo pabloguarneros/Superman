@@ -5,7 +5,7 @@ class SeeActivitiesSerializer(serializers.ModelSerializer):
     #right now it is only seen though!!
     class Meta:
         model = Manly
-        fields = ['description','manly_points']
+        fields = ['pk','description','manly_points']
 
 class EmotionSerializer(serializers.ModelSerializer):
 

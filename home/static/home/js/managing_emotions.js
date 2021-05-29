@@ -148,131 +148,6 @@ class Collections extends React.Component {
         fetchFilm();
     }
 
-    handleSearchChange(event){
-        const value = event.target.value;
-        this.setState({
-            search_value: value,
-        },this.getFilms(value));
-
-
-    }
-
-    getFilms(value) {
-        // var url = `http://127.0.0.1:8000/search/api/film_by_tag?&tt=${value}`
-        var url = `/search/api/film_by_tag?&tt=${value}`
-        var searched_films = []
-        const fetchSearch = async () => {
-            fetch(url)
-                .then(response => response.json())
-                .then(data => {
-                    searched_films = [];
-                    for (var i = 0; i < data.length; i++){
-                        const movie_ID = data[i]["movie_ID"];
-                        const image = new Image().src=data[i]["poster_pic"];
-                        searched_films.push([movie_ID,image]);
-                        };
-                    this.setState({
-                            searched_films: searched_films
-                        });
-                });
-        };
-        fetchSearch();
-      } 
-    
-      handleAdd = (event) => {{
-          const movie_ID = event.target.getAttribute("value");
-          const poster = event.target.getAttribute("src");
-          var on_coll = this.state.on_coll;
-          var if_contains = on_coll.every((element,index,array)=>{
-                return array[index][0] != movie_ID;
-                });
-          if (if_contains){
-            on_coll.push([movie_ID,poster]);
-                this.setState({
-                on_coll: on_coll,
-                });
-                $(`.movie_search_${movie_ID}`).css("filter","brightness(0%)");
-            }
-    }}
-
-      handleRem = (event) => {{
-        const movie_ID = event.target.getAttribute("value");
-        var array = this.state.on_coll;
-        var filtered = array.filter(function(value, index, array){ 
-            return value[0] != movie_ID;
-            });
-        this.setState({
-            on_coll: filtered,
-            });
-        $(`.movie_search_${movie_ID}`).css("filter","brightness(100%)");
-    }}
-
-    handlePrivacy(selectedOption) {
-        this.setState({
-            privacy: selectedOption.target.value
-        });
-      }
-
-    renderAddFilms(){
-        if (this.state.loaded == false){
-            this.handleFilmLoad();
-        };
-        if (this.state)
-        return( // WHY DOES IT KEEP GOING ON AND ON AND ON AND ON
-            <div id="scene4" className="ac fc cent">
-                <h2> Add Films </h2>
-                <small> You can always add + later! </small>
-                <div id="search_col" className="fc cent">
-                    {this.state.easy_f.length > 0 && //if statement renders if the result can be mapped
-                    <div id="l_search" className="fc ac cent">
-                        <small className="border_label"> Easy Select </small>
-                        <div id="suggested_gall" className="fr">
-                        {this.state.easy_f.map((item) => {
-                            let movie_class = "movie_search_".concat(item[0])
-                            return <div>
-                                <a className={movie_class} onClick={this.handleAdd}>
-                                    <img value={item[0]} src={item[1]} alt="Poster Picture"/>
-                                </a>
-                            </div>
-                        })}
-                        </div>
-                    </div>
-                    } 
-                    <div id="r_search" className="fc ac cent">
-                        <small className="border_label"> Search </small>
-                        <input type="text" value={this.state.search_value} onChange={this.handleSearchChange}></input>
-                            <div id="searched_gall" className="fr">
-                                {this.state.searched_films.map((item) => {
-                                    let movie_class = "movie_search_".concat(item[0])
-                                    return <div>
-                                        <a className={movie_class} onClick={this.handleAdd}>
-                                            <img value={item[0]} src={item[1]} alt="Poster Picture"/>
-                                        </a>
-                                    </div>
-                                })}
-                            </div>
-                        </div>
-                    </div>
-                <div id="selected_ff" className="fc cent ac">
-                        
-                        {this.state.on_coll.length >0 && <small className="border_label"> Selected </small>}
-                        <div id="selected_gall" className="fr">
-                        {this.state.on_coll.map((item) => {
-                            return <div>
-                                <a onClick={this.handleRem}>
-                                    <img value={item[0]} src={item[1]} alt="Poster Picture"/>
-                                </a>
-                            </div>
-                        })}
-                        </div>
-                    </div>
-                <button class="next_BTN" onClick={this.nextBTN}>
-                    Next
-                </button>
-            </div>
-        )
-    }
-
     renderAddMeta(){
         return(
             <div id="scene5" className="ac fc cent">
@@ -284,9 +159,11 @@ class Collections extends React.Component {
                 <label id="privacy_settings">
                     <p> Privacy Settings </p>
                     <select id="privacy_select" className="form-group" value={this.state.privacy} onChange={this.handlePrivacy}>
-                        <option value={1}>Public</option>
-                        <option value={2}>Only Friends</option>
-                        <option value={0}>Private</option>
+                        <option value={0}>Public</option>
+                        <option value={1}>Only Friends</option>
+                        <option value={2}>Private</option>
+                        <option value={3}>Public</option>
+                        <option value={4}>Only Friends</option>
                     </select>
                 </label>
                 <button class="next_BTN" onClick={this.handleSubmit}>

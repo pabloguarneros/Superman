@@ -8,6 +8,16 @@ body {
     background: linear-gradient(180deg, #0F2027 0%, #203A43 53.65%, #2C5364 100%);
     background-repeat: no-repeat;
     background-attachment: fixed;
+    color:#d0d6ce;
+}
+
+a{
+    text-decoration: none;
+    color:#97EAD2;
+}
+a:hover{
+    text-decoration: none;
+    color:#8CC7A1;
 }
 
 button{

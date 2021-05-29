@@ -36,7 +36,7 @@ class seeActivities(generics.ListAPIView):
 
     def get_queryset(self):
         user = self.request.user
-        return Manly.objects.exclude(users_done=user)
+        return Manly.objects.exclude(users_done=user)[0:20]
 
 class seeEmotions(generics.ListAPIView):
 
