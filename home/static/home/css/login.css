@@ -1,0 +1,37 @@
+body{
+    overflow:hidden;
+}
+
+.wrapper{
+    display:grid;
+    grid-template-columns: 30% 40% 15% 15%;
+    grid-template-rows: 20% 30% 30% 15% 5%;
+    height:98vh;
+    width:98vw;
+    overflow:hidden;
+}
+
+.sun{
+    grid-area: 2/2/3/3;
+}
+
+.sun #sun_object{
+    border-radius:100px;
+    width:140px;
+    height:140px;
+    background: linear-gradient(199.88deg, #97EAD2 32.98%, #8CC7A1 82.78%);
+}
+
+#access_buttons{
+    grid-area: 3/2/4/3;
+}
+
+#login_BTN{
+    width:160px;
+    height:40px;
+    font-size:18px;
+    padding:5px;
+    border-radius: 80px;
+    margin:10px;
+    cursor:pointer;
+}

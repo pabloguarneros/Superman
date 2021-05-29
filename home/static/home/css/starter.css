@@ -1,0 +1,60 @@
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    font-family: 'Futura','Verdana',sans-serif;
+    margin: 0;
+    background: linear-gradient(180deg, #0F2027 0%, #203A43 53.65%, #2C5364 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+button{
+    background: rgba(255, 255, 255, 0.34);
+    color:#F0F0F0;
+    padding:5px;
+    border-radius: 80px;
+    margin:10px;
+    outline:none;
+    border:none;
+    font-variant: normal;
+    font-family: 'Futura','Verdana',sans-serif;
+    font-style:normal;
+    font-weight: 500;
+    line-height: 143.31%;
+    letter-spacing: 0.105em;
+    cursor:pointer;
+}
+
+button:hover{
+    background: #97EAD2;
+    color: #203A43
+}
+
+.h_cent{
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.v_cent{
+    margin-top:auto;
+    margin-bottom:auto;
+}
+
+.fc{
+    display:flex;
+    flex-direction: column;
+}
+
+.ac{
+    align-items:center
+}
+
+.tt_cent{
+    text-align: center;
+}
+
+.fr{
+    display:flex
+}

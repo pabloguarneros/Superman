@@ -10,6 +10,9 @@
 ##################
 .env
 env/
+superman/.env
+superman/env
+
 
 # Directories #
 ###############

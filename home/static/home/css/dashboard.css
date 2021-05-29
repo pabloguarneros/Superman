@@ -1,160 +1,86 @@
 .wrapper {
     display: grid;
+    margin:auto;
+    height:97%;
+    padding:10px;
     grid-template-columns: repeat(8, 1fr);
-    gap: 10px;
     grid-auto-rows: minmax(90px, auto);
   }
-  .one {
+  .wrapper_child{
+    background: rgba(255, 255, 255, 0.19);
+    border-radius: 10px;
+    margin:6px;
+  }
+  .manly_points {
     grid-column: 1 / 7;
     grid-row: 1 / 5;
-    background-color: #F0DFAD;
-    border-radius: 10px;
     display: flex;
-    padding: 15px;
     justify-content: left;
-    border: 1.5px solid #fff;
-    border-color: black;
-    display: grid;
-    gap: 10px;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(8, 1fr);
-    
-    
   }
-  .nested-1 {
-    grid-column: 1 / 5;
-    grid-row: 1 / 8;
-  }
-  
-  .nested-2 {
-    grid-column: 5 / 9;
-    grid-row: 1 / 8;
-    
-  } 
-  .text-vid {
-    grid-column: 1 / 9;
-    grid-row: 7 / 9;
-    text-align: center;
-    font-size:2.5em
-  }
-  .two {
+  .friends {
     grid-column: 7 / 8;
     grid-row: 1 / 4;
     padding: 5px;
-    background-color: #EDF0DA;
-    border-radius: 10px;
-    border: 1.5px solid #fff;
-    border-color: black;
     display: grid;
-    grid-template-columns: grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-template-rows: repeat(6, 1fr);
   }
-  
   .friend-title{
     grid-column:1/3;
     grid-row:0/1;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 10px;
-    border: 1.5px solid #fff;
-    border-color: black;
     margin: 10px 10px 10px 10px;
     background-color: #F0DFAD;
   }
   .friend-1,.friend-2, .friend-3,.friend-4, .friend-5, .friend-6{
-    grid-column: 2/3;
-    background-color: #F0DFAD;
-    border: 1.5px solid #fff;
+    grid-column: 1/3;
+    background: rgba(255, 255, 255, 0.19);
     padding: 10px;
     text-align:end;
   }
-  .photo-1{
-    grid-column: 1/2;
-    grid-row: 2/3;
-    background-color: white;
-    border: 1.5px solid #fff;
-  }
-  .photo-2{
-    grid-column: 1/2;
-    grid-row: 3/4;
-    background-color: white;
-    border: 1.5px solid #fff;
-  }
-  .photo-3{
-    grid-column: 1/2;
-    grid-row: 4/5;
-    background-color: white;
-    border: 1.5px solid #fff;
-  }
-  .photo-4{
-    grid-column: 1/2;
-    grid-row: 5/6;
-    background-color: white;
-    border: 1.5px solid #fff;
-  }
-  .photo-5{
-    grid-column: 1/2;
-    grid-row: 6/7;
-    background-color: white;
-    border: 1.5px solid #fff;
-  }
-  .three {
+  .five_plan {
     grid-column: 7/ 8;
     grid-row: 4 / 5;
-    background-color: #A89B8C;
-    border-radius: 10px;
-    border: 1.5px solid #fff;
-    border-color: black;
   }
-  .four {
+
+  .mood_tracker {
     grid-column: 8/9;
     grid-row: 1/6;
-    background-color: #EDF0DA;
-    border-radius: 10px;
-    border: 1.5px solid #fff;
-    border-color: black;
     display: grid;
     grid-gap: 10px;
     grid-template-rows: autofit(5, 50px);
     padding: 10px;
   }
-  
   .mood-title {
     text-align: center;
     justify-content: center;
     font-size: 1.5em;
     border-radius: 10px;
-    border: 1.5px solid #fff;
-    border-color: black;
     background-color: #F0DFAD;
   }
-  .mood-1,.mood-2, .mood-3,.mood-4, .mood-5{
+  .mood:hover{
+    transform: scale(1.2);
     font-size: 2.5em;
     text-align:center;
   }
-  
-  .mood-1:hover{
-    transform: scale(1.2);
-  }
-  .mood-2:hover{
-    transform: scale(1.2);
-  }
-  .mood-3:hover{
-    transform: scale(1.2);
-  }
-  .mood-4:hover{
-    transform: scale(1.2);
-  }
-  .mood-5:hover{
-    transform: scale(1.2);
-  }
-  .five {
+  .resources {
     grid-column: 1 / 8;
     grid-row: 5;
-    background-color: #A89B8C;
-    border-radius: 10px;
-    border: 1.5px solid #fff;
-    border-color: black;
   }
   
+  .videos {
+    display:flex;
+    flex-direction:row;
+    grid-column: 1 / 9;
+    grid-row: 6;
+    overflow: hidden;
+    overflow: hidden;
+  }
+
+  .videos iframe{
+      border-radius:20px;
+      border:none;
+      padding:9px;
+  }

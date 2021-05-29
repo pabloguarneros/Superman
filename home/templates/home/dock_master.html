@@ -6,16 +6,22 @@
 {% block head %}
     <title> Hanyang Gallery </title>
     <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-  
+    <link type="text/css" rel="stylesheet" href="{% static 'home/css/login.css'%}"></link>
 {% endblock %}
 
 {% block body %}
-    <div class="login-box auth0-box before">
-        <img src="https://i.cloudup.com/StzWWrY34s.png" />
-        <h3>Auth0 Example</h3>
-        <p>Zero friction identity infrastructure, built for developers</p>
-        <a class="btn btn-primary btn-lg btn-login btn-block" href="/login/auth0">Log In</a>
+    <div class="wrapper">
+        <div class="sun h_cent">
+            <div id="sun_object">
+            </div>
+        </div>
+        <div id="access_buttons" class="h_cent">
+            <div class="buttons fc h_cent">
+                <button id="login_BTN" onclick="location.href='/login/auth0'">Log In</button>
+            </div>
+        </div>
     </div>
+
 {% endblock %}
 
 

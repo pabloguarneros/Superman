@@ -7,39 +7,43 @@
     <title> Hanyang Gallery </title>
     <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
     <link type="text/css" rel="stylesheet" href="{% static 'home/css/dashboard.css'%}"></link>
-
 {% endblock %}
 
 {% block body %}
     <div class="wrapper">
-  <div class="one">
-    <div class="nested-1"><iframe width="500" height="325" src="https://www.youtube.com/embed/DegR837ysD4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-    <div class="nested-2"><iframe width="500" height="325" src="https://www.youtube.com/embed/nG1VpuLFAjA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-    <div class="text-vid"> Here are your daily videos!</div>
-  </div>
-  <div class="two">
+      <div class="manly_points wrapper_child">
+        <div class="top_user_nav">
+        </div>
+        <div class="fr">
+          <h2>{{ user.username | title }}</h2>
+          <pre>{{ userdata }}</pre>
+          <a class="btn btn-primary btn-lg btn-logout btn-block" href="/logout">Logout</a>
+        </div>
+      </div>
+  <div class="friends wrapper_child">
     <div class="friend-title">Your friend list </div>
     <div class="friend-1">Friend 1 </div>
     <div class="friend-2">Friend 2 </div>
     <div class="friend-3">Friend 3 </div>
     <div class="friend-4">Friend 4 </div>
     <div class="friend-5">Friend 5 </div>
-    <div class="photo-1"> <img src='http://pngimg.com/uploads/man/man_PNG6533.png'  width="60" height="60"/></div>
-    <div class="photo-2"><img src='http://pngimg.com/uploads/man/man_PNG6531.png'  width="60" height="60"/> </div>
-    <div class="photo-3"><img src='http://pngimg.com/uploads/man/man_PNG6521.png'  width="60" height="60"/> </div>
-    <div class="photo-4"><img src='http://pngimg.com/uploads/man/man_PNG6519.png'  width="60" height="60"/> </div>
-    <div class="photo-5"><img src='http://pngimg.com/uploads/man/man_PNG6526.png'  width="60" height="60"/> </div>
   </div>
-  <div class="three">Three</div>
-  <div class="four">
+  <div class="five_plan wrapper_child">
+  </div>
+  <div class="mood_tracker wrapper_child">
     <div class="mood-title">What is your mood today?</div>
-    <div class="mood-1">😍</div>
-    <div class="mood-2">🙂</div>
-    <div class="mood-3">😐</div>
-    <div class="mood-4">😟 </div>
-    <div class="mood-5">😭 </div>
+    <div class="mood">😍</div>
+    <div class="mood">🙂</div>
+    <div class="mood">😐</div>
+    <div class="mood">😟 </div>
+    <div class="mood">😭 </div>
   </div>
-  <div class="five">Five</div>
+  <div class="resources wrapper_child">
+  </div>
+  <div class="videos wrapper_child">
+      <iframe src="https://www.youtube.com/embed/DegR837ysD4" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/nG1VpuLFAjA" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
 </div>
 {% endblock %}
 
