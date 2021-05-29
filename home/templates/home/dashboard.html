@@ -10,16 +10,23 @@
 {% endblock %}
 
 {% block body %}
-    <div class="wrapper">
-      <div class="manly_points wrapper_child">
-        <div class="top_user_nav">
+<div class="wrapper">
+    <div class="gamification wrapper_child">
+      <div class="user_nav fr ac">
+        <div class="intro_profile fr">
+          <object type="image/svg+xml" data="{% static 'icons/male_2.svg' %}"></object>
+          <h3>{{ user.username | title }}</h3>
         </div>
-        <div class="fr">
-          <h2>{{ user.username | title }}</h2>
+        <div class="manly_points fr ac">
+          <p>Manly Points:</p> {{ user.manly_points }}
+        </div>
+        <div id="logout_BTN" class="fr ac">
           <pre>{{ userdata }}</pre>
           <a class="btn btn-primary btn-lg btn-logout btn-block" href="/logout">Logout</a>
         </div>
       </div>
+    </div>
+  
   <div class="friends wrapper_child">
     <div class="friend-title">Your friend list </div>
     <div class="friend-1">Friend 1 </div>
@@ -29,6 +36,9 @@
     <div class="friend-5">Friend 5 </div>
   </div>
   <div class="five_plan wrapper_child">
+    <a href="{% static 'documents/Brown_StanleySafetyPlan.pdf' %}" download>
+    Download Safety Plan
+    </a>
   </div>
   <div class="mood_tracker wrapper_child">
     <div class="mood-title">What is your mood today?</div>
@@ -38,18 +48,40 @@
     <div class="mood">😟 </div>
     <div class="mood">😭 </div>
   </div>
-  <div class="resources wrapper_child">
+
+  <div class="resources wrapper_child fr h_cent">
+    <div class="resource_item fr ac">
+      <object type="image/svg+xml" data="{% static 'icons/game.svg' %}"></object>
+      <button onclick="location.href='https://thoughtcatalog.com/ioana-casapu/2017/06/100-things-you-can-still-do-while-being-depressed-that-will-make-you-feel-better/'" target="_blank"> Things To Do </button>
+    </div>
+    <div class="resource_item fr ac">
+      <object type="image/svg+xml" data="{% static 'icons/phone.svg' %}"></object>
+      <button onclick="location.href='https://www.opencounseling.com/suicide-hotlines'" target="_blank"> Hotlines </button>
+    </div>
+    <div class="resource_item fr ac">
+      <object type="image/svg+xml" data="{% static 'icons/layers.svg' %}"></object>
+      <button onclick="location.href='https://brkthru.webflow.io/'" target="_blank"> Other Apps </button>
+    </div>
+    <div class="resource_item fr ac">
+      <object type="image/svg+xml" data="{% static 'icons/notebook.svg' %}"></object>
+      <button onclick="location.href='https://www.who.int/mental_health/suicide-prevention/world_report_2014/en/'" target="_blank"> UN Report </button>
+    </div>
+    <div class="resource_item fr ac">
+      <object type="image/svg+xml" data="{% static 'icons/parking.svg' %}"></object>
+      <button onclick="location.href='https://bmcmedicine.biomedcentral.com/articles/10.1186/s12916-019-1461-z'" target="_blank"> Careful </button>
+    </div>
   </div>
+
   <div class="videos wrapper_child">
       <iframe src="https://www.youtube.com/embed/DegR837ysD4" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       <iframe src="https://www.youtube.com/embed/nG1VpuLFAjA" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/Na4mDlGTA0s" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/r9xWmbSSR3Y" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
 </div>
 {% endblock %}
 
 
 {% block scripts %}
-    {% compress js %}
-        <script type="module" src="{% static 'home/js/js_test.js' %}"></script>
-    {% endcompress %}
+    <script type="text/babel" src="{% static "users/js/create_collection.js" %}"></script> 
 {% endblock %}
