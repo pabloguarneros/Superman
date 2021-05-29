@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Men are three times more likely to die from suicide than women in the UK. As the pandemic continues, the economy will suffer. According to the BBC, 18-24 months after every economic downturn, the rates of suicide skyrocket. Although we haven't felt the surge, it will come. We need to be prepared.
 
 The Team
@@ -16,3 +17,10 @@ Potential Dangers:
 Icons made by xnimrodx from www.flaticon.com and Freepik from www.flaticon.com
 Safety Plan downloaded from https://suicidepreventionlifeline.org/
 Intro Citation: https://www.bbc.com/future/article/20190313-why-more-men-kill-themselves-than-women
+=======
+# superm-n
+
+Icons: 
+
+Icons made by xnimrodx from www.flaticon.com and Freepik from www.flaticon.com.
+>>>>>>> bbcca013f956e0e3a84c08437c0aade1fd6c6923
