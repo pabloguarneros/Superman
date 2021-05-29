@@ -32,8 +32,8 @@ class Checklist extends React.Component {
     render() {
         if (this.state.loaded){
             return(
-            <div id="scene1" className="ac fc cent">
-                <div className="fr">
+            <div className="one_activity ac fc v_cent">
+                <div className="fr v_cent">
                     {this.state.activity.slice(0,1).map((item) => {
                                 return <div>
                                     <p> {item["description"]} </p>    

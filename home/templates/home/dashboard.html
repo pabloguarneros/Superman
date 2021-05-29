@@ -14,7 +14,7 @@
     <div class="gamification wrapper_child fc">
       <div class="user_nav fr ac">
         <div class="intro_profile fr">
-          <object type="image/svg+xml" data="{% static 'icons/male_2.svg' %}"></object>
+          <object type="image/svg+xml" data="{% static 'icons/user.svg' %}"></object>
           <h3>{{ user.username | title }}</h3>
         </div>
         <div class="manly_points fr ac">
@@ -29,47 +29,50 @@
     </div>
   
   <div class="friends wrapper_child">
-    <div class="friend-title">Your friend list </div>
-    <div class="friend-1">Friend 1 </div>
-    <div class="friend-2">Friend 2 </div>
-    <div class="friend-3">Friend 3 </div>
-    <div class="friend-4">Friend 4 </div>
-    <div class="friend-5">Friend 5 </div>
+    <div id="friend_manager">
+    </div>
   </div>
   <div class="five_plan wrapper_child">
-    <a href="{% static 'documents/Brown_StanleySafetyPlan.pdf' %}" download>
+    <button onclick="location.href='https://suicidepreventionlifeline.org/wp-content/uploads/2016/08/Brown_StanleySafetyPlanTemplate.pdf'" target="_blank">
     Download Safety Plan
-    </a>
+    </button>
   </div>
   <div class="mood_tracker wrapper_child">
-    <div class="mood-title">What is your mood today?</div>
-    <div class="mood">😍</div>
-    <div class="mood">🙂</div>
-    <div class="mood">😐</div>
-    <div class="mood">😟 </div>
-    <div class="mood">😭 </div>
+    <div id="mood_manager">
+    </div>
   </div>
 
   <div class="resources wrapper_child fr h_cent">
-    <div class="resource_item fr ac">
-      <object type="image/svg+xml" data="{% static 'icons/game.svg' %}"></object>
-      <button onclick="location.href='https://thoughtcatalog.com/ioana-casapu/2017/06/100-things-you-can-still-do-while-being-depressed-that-will-make-you-feel-better/'" target="_blank"> Things To Do </button>
+    <div id="resources_tt">
+      <h3> Helpful Resources </h3> 
     </div>
     <div class="resource_item fr ac">
-      <object type="image/svg+xml" data="{% static 'icons/phone.svg' %}"></object>
-      <button onclick="location.href='https://www.opencounseling.com/suicide-hotlines'" target="_blank"> Hotlines </button>
+      <button class="fr" onclick="location.href='https://thoughtcatalog.com/ioana-casapu/2017/06/100-things-you-can-still-do-while-being-depressed-that-will-make-you-feel-better/'" target="_blank">
+        <object type="image/svg+xml" data="{% static 'icons/game.svg' %}"></object>
+        Things To Do
+      </button>
     </div>
     <div class="resource_item fr ac">
-      <object type="image/svg+xml" data="{% static 'icons/layers.svg' %}"></object>
-      <button onclick="location.href='https://brkthru.webflow.io/'" target="_blank"> Other Apps </button>
+      <button class="fr" onclick="location.href='https://www.opencounseling.com/suicide-hotlines'" target="_blank">
+        <object type="image/svg+xml" data="{% static 'icons/phone.svg' %}"></object>
+        Hotlines
+        </button>
     </div>
     <div class="resource_item fr ac">
-      <object type="image/svg+xml" data="{% static 'icons/notebook.svg' %}"></object>
-      <button onclick="location.href='https://www.who.int/mental_health/suicide-prevention/world_report_2014/en/'" target="_blank"> UN Report </button>
+        <button class="fr" onclick="location.href='https://brkthru.webflow.io/'" target="_blank">
+        <object type="image/svg+xml" data="{% static 'icons/layers.svg' %}"></object>
+        Other Apps </button>
     </div>
     <div class="resource_item fr ac">
+      <button class="fr" onclick="location.href='https://www.who.int/mental_health/suicide-prevention/world_report_2014/en/'" target="_blank">
+        <object type="image/svg+xml" data="{% static 'icons/notebook.svg' %}"></object>
+        UN Report
+        </button>
+    </div>
+    <div class="resource_item fr ac">
+      <button class="fr" onclick="location.href='https://bmcmedicine.biomedcentral.com/articles/10.1186/s12916-019-1461-z'" target="_blank">
       <object type="image/svg+xml" data="{% static 'icons/parking.svg' %}"></object>
-      <button onclick="location.href='https://bmcmedicine.biomedcentral.com/articles/10.1186/s12916-019-1461-z'" target="_blank"> Careful </button>
+      Careful </button>
     </div>
   </div>
 
@@ -85,4 +88,6 @@
 
 {% block scripts %}
     <script type="text/babel" src="{% static "home/js/done_activity.js" %}"></script> 
+    <script type="text/babel" src="{% static "home/js/adding_friends.js" %}"></script> 
+    <script type="text/babel" src="{% static "home/js/managing_emotions.js" %}"></script>
 {% endblock %}

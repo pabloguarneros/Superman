@@ -40,17 +40,18 @@ class Friend(models.Model):
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
 
-        img = Image.open(self.face_pic.path)
+        if self.face_pic:
+            img = Image.open(self.face_pic.path)
 
-        if img.height > 250 or img.width > 250:
-            new_img = (250, 250)
-            img.thumbnail(new_img)
-            img = img.convert('RGB') #convert transparency to new image!
-            img.save(self.face_pic.path)  # saving image at the same path
+            if img.height > 250 or img.width > 250:
+                new_img = (250, 250)
+                img.thumbnail(new_img)
+                img = img.convert('RGB') #convert transparency to new image!
+                img.save(self.face_pic.path)  # saving image at the same path
 
 class Friend_List(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    emotions = models.ManyToManyField(Friend, blank=True)
+    friends = models.ManyToManyField(Friend, blank=True)
 
 # Create your models here.
 class Manly(models.Model):

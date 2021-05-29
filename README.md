@@ -15,7 +15,7 @@ Pablo Guarneros - Mexico
     - 2) We must rename objects and elements, so people with visual impairment can use the platform too. 
 
 ## Sources
-Icons made by xnimrodx from www.flaticon.com and Freepik from www.flaticon.com
+Icons made by xnimrodx, Becris, and Freepik from www.flaticon.com
 Safety Plan downloaded from https://suicidepreventionlifeline.org/
 Intro Citation: https://www.bbc.com/future/article/20190313-why-more-men-kill-themselves-than-women
 ##

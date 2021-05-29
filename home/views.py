@@ -8,7 +8,7 @@ from rest_framework.response import Response
 from rest_framework import status, generics
 
 from user_dashboard.models import Manly, Emotion_Schedule, Friend_List
-from .serializers import SeeActivitiesSerializer, SeeEmotionsSerializer, SeeFriendsSerializer
+from .serializers import SeeActivitiesSerializer, EmotionSerializer, FriendSerializer
 
 
 
@@ -40,19 +40,19 @@ class seeActivities(generics.ListAPIView):
 
 class seeEmotions(generics.ListAPIView):
 
-    serializer_class = SeeEmotionsSerializer
+    serializer_class = EmotionSerializer
 
     def get_queryset(self):
         user = self.request.user
         obj, created = Emotion_Schedule.objects.get_or_create(user=user)
-        return obj
+        return obj.emotions.all()
 
 class seeFriends(generics.ListAPIView):
 
-    serializer_class = SeeFriendsSerializer
+    serializer_class = FriendSerializer
 
     def get_queryset(self):
         user = self.request.user
         obj, created = Friend_List.objects.get_or_create(user=user)
-        return obj
+        return obj.friends.all()
 

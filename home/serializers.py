@@ -13,24 +13,8 @@ class EmotionSerializer(serializers.ModelSerializer):
         model = Emotion
         fields = ('emotion','time_felt')
 
-class SeeEmotionsSerializer(serializers.ModelSerializer):
-    
-    emotions = EmotionSerializer()
-
-    class Meta:
-        model = Emotion_Schedule
-        fields = ['emotions']
-
 class FriendSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Friend
         fields = ('name','phone','social_media_link','face_pic')
-
-class SeeFriendsSerializer(serializers.ModelSerializer):
-    
-    emotions = FriendSerializer()
-
-    class Meta:
-        model = Friend_List
-        fields = ['emotions']
