@@ -25,6 +25,8 @@
     "postcss-cli": "^8.3.1"
   },
   "dependencies": {
-    "magic-sdk": "^4.3.0"
+    "magic-sdk": "^4.3.0",
+    "babel-preset-es2015": "^6.24.1",
+    "browserify": "^14.5.0"
   }
 }
