@@ -13,7 +13,6 @@ env/
 superman/.env
 superman/env
 
-
 # Directories #
 ###############
 node_modules
