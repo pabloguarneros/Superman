@@ -4,6 +4,7 @@ from django.utils import timezone
 import nltk
 nltk.download('vader_lexicon')
 nltk.download('punkt')
+nltk.download('averaged_perceptron_tagger')
 from nltk import FreqDist
 from nltk.corpus import stopwords
 from nltk.tokenize import sent_tokenize, word_tokenize
