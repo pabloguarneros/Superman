@@ -3,6 +3,7 @@ from user_dashboard.models import User
 from django.utils import timezone
 import nltk
 nltk.download('vader_lexicon')
+nltk.download('punkt')
 from nltk import FreqDist
 from nltk.corpus import stopwords
 from nltk.tokenize import sent_tokenize, word_tokenize
