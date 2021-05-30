@@ -4,7 +4,7 @@
 {% load crispy_forms_tags %}
 
 {% block head %}
-    <title> Hanyang Gallery </title>
+    <title> {{ user|title }}'s Real Mancave </title>
     <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
     <link type="text/css" rel="stylesheet" href="{% static 'home/css/dashboard.css'%}"></link>
 {% endblock %}
@@ -18,14 +18,24 @@
           <h3>{{ user.username | title }}</h3>
         </div>
         <div class="manly_points fr ac">
-          <p>Manly Points: {{ user.manly_points }} </p>
+          <p>Points: {{ user.manly_points }} </p>
         </div>
         <div id="logout_BTN" class="fr ac">
           <pre>{{ userdata }}</pre>
           <a class="btn btn-primary btn-lg btn-logout btn-block" href="/logout">yeet out</a>
         </div>
       </div>
-      <div id="done_activity"></div>
+      <div id="gamification_internal" class="fr ac">
+        <div id="activity_portal" class="fc ac">
+          <h4 class="tt_cent"> Daily Task </h4>
+          <div id="done_activity"></div>
+        </div>
+        <div class="h_border"></div>
+        <div id="journal_portal" class="fc ac">
+          <h4 class="tt_cent"> Daily Journal </h4>
+          <div id="journal_manager"></div>
+        </div>
+      </div>
     </div>
   
   <div class="friends wrapper_child">
@@ -33,7 +43,7 @@
     </div>
   </div>
   <div class="five_plan wrapper_child">
-    <button onclick="location.href='https://suicidepreventionlifeline.org/wp-content/uploads/2016/08/Brown_StanleySafetyPlanTemplate.pdf'" target="_blank">
+    <button onclick="window.open('https://suicidepreventionlifeline.org/wp-content/uploads/2016/08/Brown_StanleySafetyPlanTemplate.pdf')" target="_blank">
     Download Safety Plan
     </button>
   </div>
@@ -47,30 +57,30 @@
       <h3> Helpful Resources </h3> 
     </div>
     <div class="resource_item fr ac">
-      <button class="fr" onclick="location.href='https://thoughtcatalog.com/ioana-casapu/2017/06/100-things-you-can-still-do-while-being-depressed-that-will-make-you-feel-better/'" target="_blank">
+      <button class="fr" onclick="window.open('https://thoughtcatalog.com/ioana-casapu/2017/06/100-things-you-can-still-do-while-being-depressed-that-will-make-you-feel-better/')">
         <object type="image/svg+xml" data="{% static 'icons/game.svg' %}"></object>
         Things To Do
       </button>
     </div>
     <div class="resource_item fr ac">
-      <button class="fr" onclick="location.href='https://www.opencounseling.com/suicide-hotlines'" target="_blank">
+      <button class="fr" onclick="window.open('https://www.opencounseling.com/suicide-hotlines')">
         <object type="image/svg+xml" data="{% static 'icons/phone.svg' %}"></object>
         Hotlines
         </button>
     </div>
     <div class="resource_item fr ac">
-        <button class="fr" onclick="location.href='https://brkthru.webflow.io/'" target="_blank">
+        <button class="fr" onclick="window.open('https://brkthru.webflow.io/')">
         <object type="image/svg+xml" data="{% static 'icons/layers.svg' %}"></object>
         Other Apps </button>
     </div>
     <div class="resource_item fr ac">
-      <button class="fr" onclick="location.href='https://www.who.int/mental_health/suicide-prevention/world_report_2014/en/'" target="_blank">
+      <button class="fr" onclick="window.open('https://www.who.int/mental_health/suicide-prevention/world_report_2014/en/')">
         <object type="image/svg+xml" data="{% static 'icons/notebook.svg' %}"></object>
         UN Report
         </button>
     </div>
     <div class="resource_item fr ac">
-      <button class="fr" onclick="location.href='https://bmcmedicine.biomedcentral.com/articles/10.1186/s12916-019-1461-z'" target="_blank">
+      <button class="fr" onclick="window.open('https://bmcmedicine.biomedcentral.com/articles/10.1186/s12916-019-1461-z')">
       <object type="image/svg+xml" data="{% static 'icons/parking.svg' %}"></object>
       Careful </button>
     </div>
@@ -90,4 +100,5 @@
     <script type="text/babel" src="{% static "home/js/done_activity.js" %}"></script> 
     <script type="text/babel" src="{% static "home/js/adding_friends.js" %}"></script> 
     <script type="text/babel" src="{% static "home/js/managing_emotions.js" %}"></script>
+    <script type="text/babel" src="{% static "home/js/journal.js" %}"></script>
 {% endblock %}

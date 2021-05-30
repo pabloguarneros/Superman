@@ -11,8 +11,7 @@ urlpatterns = [
     path('', include('django.contrib.auth.urls')),
     path('', include('social_django.urls')),
     path('users/',include(('user_dashboard.urls','user_dashboard'),namespace='user_dashboard')),
-
-
+    path('journal/',include(('journal.urls','journal'),namespace='journal'))
 ]
 
 if settings.DEBUG: 

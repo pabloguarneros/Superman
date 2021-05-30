@@ -33,11 +33,79 @@
     height:40px;
     margin-right:8px;
   }
-  #done_activity{
+  #journal_portal{
+    height:80%;
+    width:70%;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:auto;
+  }
+  #journal_manager, #add_new_entry{
+    width:100%;
+    height:100%;
+  }
+  #add_new_entry label{
+    width:100%;
+    height:70%;
+  }
+  #add_new_entry small{
+    margin-bottom:15px;
+  }
+  #add_new_entry textarea{
+    width:100%;
+    height:90%;
+    padding:10px;
+    outline:none;
+    border:none;
+    border-radius:10px;
+    background-color:rgba(255, 255, 255, 0.07);
+    color:#d0d6ce;
+    resize:none;
+  }
+  .entry_div{
+    width:100%;
+    height:2px;
+    background-color:#d0d6ce;
+    margin-bottom:5px;
+  }
+  #keyword_map{
+    flex-wrap:wrap;
+  }
+  .keyword_labels{
+    margin-bottom:10px;
+  }
+  .h_border{
+    width:4px;
+    border-radius:20px;
+    height:90%;
+    background-color: #0F2027;
+  }
+  #journal_container{
+    height:100%;
+    width:100%;
+    overflow-y:scroll;
+    overflow-x:hidden;
+  }
+  #entry_review{
+    width:100%;
+    height:100%;
+  }
+  .single_entry{
+    width:90%;
+  }
+  #gamification_internal{
+    justify-content:space-around;
+    height:80%;
+  }
+  #activity_portal{
+    width:20%;
     height:100%;
   }
   .one_activity{
     height:90%;
+  }
+  #browse_activity_btns{
+    margin-top:15px;
   }
   #logout_BTN{
     margin-left:auto;
@@ -106,7 +174,7 @@
     background-color: rgba(255, 255, 255, 0.04);
     width:100%;
   }
-  .mood_choices button:hover, .resources .resource_item button:hover{
+  .mood_choices button:hover, .resources .resource_item button:hover, .five_plan button:hover{
     background-color:#97EAD2;
   }
   .mood_choices p{
@@ -121,6 +189,7 @@
   .five_plan button{
     padding:10px 4px;
     border-radius:4px;
+    background-color: rgba(255, 255, 255, 0.04);
   }
   .mood_tracker {
     grid-column: 8/9;
@@ -148,7 +217,6 @@
     overflow-x:scroll;
     justify-content: space-between;
   }
-
   .resources .resource_item{
     margin:0px 12px;
   }

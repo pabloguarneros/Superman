@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django_extensions',
     'social_django',
     #'magiclink',
+    'journal',
     'compressor',
     'compressor_toolkit',
     'crispy_forms',

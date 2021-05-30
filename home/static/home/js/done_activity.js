@@ -35,17 +35,19 @@ class Checklist extends React.Component {
             <div className="one_activity ac fc v_cent">
                 <div className="fr v_cent">
                     {this.state.activity.slice(0,1).map((item) => {
-                                return <div>
-                                    <p> {item["description"]} </p>    
-                                    <small> Do it to get {item["manly_points"]} Manly Points! </small>                 
-                    <button id="done_btn" className="Done" value={item["pk"]} onClick={this.handleSubmit}>
-                        Done
-                    </button>
-                    {this.state.activity.length > 1 &&
-                    <button onClick={this.handleNext}>
-                        See Next
-                    </button>
-                    }
+                                return <div className="fc ac">
+                                    <p className="tt_cent"> {item["description"]} </p>    
+                                    <small className="tt_cent"> Reward: {item["manly_points"]} points </small>   
+                    <div id="browse_activity_btns" className="fr ac">              
+                        <button id="done_btn" className="Done" value={item["pk"]} onClick={this.handleSubmit}>
+                            Done
+                        </button>
+                        {this.state.activity.length > 1 &&
+                        <button onClick={this.handleNext}>
+                            See Next
+                        </button>
+                        }
+                    </div>
                 </div>
                 })}
              </div>
