@@ -1,21 +1,35 @@
-## Introduction 
-Men are three times more likely to die from suicide than women in the UK. As the pandemic continues, the economy will suffer. According to the BBC, 18-24 months after every economic downturn, the rates of suicide skyrocket. Although we haven't felt the surge, it will come. We need to be prepared.
+Supermän is a proactive suicide prevention toolkit for men that follows the clinically proven strategies missing in the current digital market.
+
+## Live Website
+www.supermän.com
 
 ## The Team
 Nazar Yaremko - Ukraine
 Pablo Guarneros - Mexico 
 
-## Likely extensions:
-- Rather than sending the user to complete their 8-step-plan outside, giving them the ability to generate it and keeps tabs within the platform
-- Because most conversations about mental health between men follow the "shoulder-to-shoulder principle," we would host livestreams of sport events that our users can watch through the app. Shoulder to shoulder principle: having a conversation about sensitive topics while occupied in other things.
+## The Current Problem
 
-## Potential Dangers:
-- We still have to optimize for accessibility
-    - 1)  For people that do not have access to a computer, the app is not yet mobile friendly. Without fixing this, we risk not giving help to a big subset of the population.
-    - 2) We must rename objects and elements, so people with visual impairment can use the platform too. 
+ A) Men are three times more likely to die from suicide than women, but men rarely get help. Traditional gender roles play a role in why men are less likely to seek help for their mental health problems. Some men say they are too embarrassed to talk about mental health and don't want to appear weak. But if they can't talk about it, what do they do? 
 
-## Sources
+ B) Although there are apps men can download, only 7% of mental health apps incorporate all six necessary suicide prevention strategies. For Martinengo et.al.(2019), this is a failure of the current digital market.
+  
+## Our Solution 
+To address this problem, we built Supermän, a resource to help men a) better understand why they are more likely to struggle with mental health and b) provide them with the necessary tools missing in the current digital market: tracking of mood and suicidal thoughts, safety plan development, offering activities to deter suicidal thoughts, access to support networks, and quick emergency counseling). We hope Supermän can turn into the launching pad that equips men to proactively improve their mental health by integrating these tools.
+
+## Looking Ahead
+1. Improve accessibility of the application by a) making the portal mobile-friendly for people without access to a computer, b) increasing the website's readability for people with visual impairments, and c) translating the website in Ukrainian, Spanish, and Hindi.
+2. Rather than having people print out and fill in their Safety Plan, we will make it easy for them to do on the platform.
+3. Meet with additional mental health professionals and beta-test the product with more users to improve the tools.
+4. We look forward to tying the mood tracker with the NLP algorithm to better track which days or months the user's moods fluctuate. Using this information, we can personalize the resources on the dashboard (e.g., videos and activities).
+
+## Get it to work
+Make sure you have django installed (pip install django)
+Then cd into the folder and hit (python manage.py runserver)
+Some functionalities will not work depending on the port of your local server
+
+## Credits
+Auth0 --> made the login process so much easier
 Icons made by xnimrodx, Becris, and Freepik from www.flaticon.com
-Safety Plan downloaded from https://suicidepreventionlifeline.org/
-Intro Citation: https://www.bbc.com/future/article/20190313-why-more-men-kill-themselves-than-women
-##
+
+## Colab
+Collaboration is always welcome. Please reach out. Our future selves will be happy you did.
