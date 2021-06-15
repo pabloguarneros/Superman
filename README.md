@@ -4,8 +4,8 @@ Supermän is a proactive suicide prevention toolkit for men that follows the cli
 www.supermän.com
 
 ## The Team
-Nazar Yaremko - Ukraine
-Pablo Guarneros - Mexico 
+Nazar Yaremko - Kalush, Ukraine
+Pablo Guarneros - CDMX, Mexico 
 
 ## The Current Problem
 
